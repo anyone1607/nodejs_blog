@@ -1,0 +1,43 @@
+<div class="mt-4">
+  <div class="row">
+    <div class="col-5">
+        <img src="{{product.image}}" alt="{{product.name}}" style="width: 100%;"/>
+        <div>
+          <img src="{{product.image1}}" style="width: 25%;">
+        </div>
+    </div>
+
+    <div class="col-7">      
+      <h1 style="font-family: 'Times New Roman', Times, serif;font-weight: bold; color: #ffb0bd;">{{product.name}}</h1>
+      <p style="font-family: 'Times New Roman', Times, serif; font-size: 2rem; font-weight: bold; color: black;">{{product.description}}</p>
+      <p style="font-family: 'Times New Roman', Times, serif; font-size: 1.5rem; font-weight: bold; color: black;">{{product.price}}</p>
+      <p>Màu sắc: {{product.color}}</p>
+      <p>Số lượng: {{product.quantity}}</p>
+      <button class="btn btn-outline-info" onclick="addToCart()">Thêm vào giỏ hàng</button>
+      <button class="btn btn-outline-info">Mua ngay</button>    
+      <div class="dropdown-divider"></div> 
+        {{> ship}}
+    </div>
+  </div>
+</div>
+
+<script>
+  var quantity = 1;
+
+  function increaseQuantity() {
+    quantity++;
+    document.getElementById('quantityInput').value = quantity;
+  }
+
+  function decreaseQuantity() {
+    if (quantity > 1) {
+      quantity--;
+      document.getElementById('quantityInput').value = quantity;
+    }
+  }
+
+  function addToCart() {
+    var selectedQuantity = document.getElementById('quantityInput').value;
+    // Thêm logic ở đây để thực hiện thêm sản phẩm vào giỏ hàng
+  }
+</script>

@@ -1,0 +1,35 @@
+<div class="mt-4">
+  <div class="row" style="display: flex; flex-wrap: wrap">
+    {{#each products}}
+      <div class="col-sm-6 col-lg-4" style="display: flex; flex-wrap: wrap">
+        <div
+          class="card"
+          style="display: flex; flex-direction: column; flex: 1; margin-bottom: 20px;"
+        >
+          <a href="/products/{{this.slug}}">
+            <img
+              style="height: 350px; object-fit: cover; width: 100%; "
+              src="{{this.image}}"
+              class="card-img-top"
+              alt="{{this.name}}"
+            />
+          </a>
+          <div
+            class="card-body"
+            style="display: flex; flex-direction: column; flex: 1;"
+          >
+            <a href="/products/{{this.slug}}" style="text-decoration: none;">
+              <h5 class="card-title" style="color: #ffb0bd">{{this.name}}</h5>
+            </a>
+            <p class="card-text" style="flex: 1;">{{this.description}}</p>
+            <p
+              class="card-text"
+              style="flex: 1; font-family: 'Times New Roman', Times, serif; font-size: 1.5rem; font-weight: bold; color: black;"
+            >{{this.price}}</p>
+            <a href="#" class="btn btn-outline-info">Thêm vào giỏ hàng</a>
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</div>
