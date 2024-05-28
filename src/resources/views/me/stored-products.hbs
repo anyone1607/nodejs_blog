@@ -1,6 +1,10 @@
 <div class="mt-4">
-  <h3>Tất cả sản phẩm</h3>
-  <a href="/me/trash/products">Thùng rác ({{deletedCount}})</a>
+  <h3 style="text-align: center;margin-top:20px;font-weight: lighter; font-family:cursive;">Tất cả sản phẩm</h3>
+  {{!-- <a href="/me/trash/products">Thùng rác ({{deletedCount}})</a> --}}
+  <a href="/me/trash/products"><button type="button" class="btn btn-primary">
+      Thùng rác
+      <span class="badge badge-light">{{deletedCount}}</span>
+    </button></a>
   <table class="table mt-4">
     <thead>
       <tr>
