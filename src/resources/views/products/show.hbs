@@ -9,16 +9,22 @@
 
     <div class="col-7">      
       <h1 style="font-family: 'Times New Roman', Times, serif;font-weight: bold; color: #ffb0bd;">{{product.name}}</h1>
-      <p style="font-family: 'Times New Roman', Times, serif; font-size: 2rem; font-weight: bold; color: black;">{{product.description}}</p>
-      <p style="font-family: 'Times New Roman', Times, serif; font-size: 1.5rem; font-weight: bold; color: black;">{{product.price}}</p>
-      <p>Màu sắc: {{product.color}}</p>
-      <p>Số lượng: {{product.quantity}}</p>
+      <p style="font-family: 'Times New Roman', Times, serif; font-size: 1.5rem; font-weight: bold; color: black;">{{product.description}}</p>
+      <p style="font-family: 'Times New Roman', Times, serif; font-size: 1.5rem; font-weight: bold; color: black;color: #ffb0bd;">{{product.price}}</p>
+      <p style="font-family: 'Times New Roman', Times, serif; font-size: 1rem; font-weight: bold; color: black;">Màu sắc: </p>
+      <p style="font-family: 'Times New Roman', Times, serif; font-size: 1rem; font-weight: bold; color: black;">Số lượng: </p>
+      <p style="font-family: 'Times New Roman', Times, serif; font-size: 1rem; font-weight: bold; color: black;">Kích thước: </p>
       <button class="btn btn-outline-info" onclick="addToCart()">Thêm vào giỏ hàng</button>
       <button class="btn btn-outline-info">Mua ngay</button>    
       <div class="dropdown-divider"></div> 
         {{> ship}}
     </div>
   </div>
+
+  <div>
+    <h4 style="font-weight: lighter; font-family:cursive;">Mô tả chi tiết</h4>
+  </div>
+
 </div>
 
 <script>

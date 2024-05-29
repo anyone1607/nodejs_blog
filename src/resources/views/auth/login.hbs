@@ -1,65 +1,115 @@
-<div class="container-fluid h-100 d-flex align-items-center">
-  <div class="w-50 h-100 d-flex flex-column" style="overflow: hidden;">
-    <img src="" alt="" class="img-fluid" style="object-fit: contain; height: 100%;" />
-  </div>
-
-  <div class="w-50 h-100 d-flex flex-column justify-content-center align-items-center" style="background-color: #f5f5f5; padding: 20px;">
-    <div class="w-100 d-flex flex-column" style="max-width: 500px;">
-      <div class="w-100 d-flex flex-column">
-        <input
-          class="form-control my-4"
-          type="email"
-          placeholder="Email"
-          style="border: none; border-bottom: 1px solid black; background-color: transparent;"
-        />
-        <input
-          class="form-control my-4"
+<div class="mt-4 mb-4">
+  <h4
+    style="font-weight: lighter; font-family:cursive; color: #ffb0bd; text-align: center;"
+  >Đăng nhập</h4>
+  <div class="container-fluid h-100 d-flex align-items-center">
+    <div class="w-50 h-100 d-flex flex-column" style="overflow: hidden;">
+      <img
+        src="https://png.pngtree.com/png-clipart/20210309/original/pngtree-two-bear-cute-valentine-couple-png-image_5860770.jpg"
+        alt=""
+        class="img-fluid"
+        style="object-fit: contain;border-radius: 25%;width: 100%; height: 100%; object-fit: contain; animation: slide-right 1s;"
+      />
+    </div>
+    <div
+      class="w-50 h-100 d-flex flex-column justify-content-center align-items-center"
+      style="background-color: #f5f5f5; padding: 20px;"
+    >
+      <div class="w-100 d-flex flex-column" style="max-width: 500px;">
+        <div class="w-100 d-flex flex-column">
+          <input
+            class="w-100"
+            style="color: black; padding: 0.5rem; margin: 1rem 0; background: transparent; border: none; border-bottom: 1px solid black; outline: none;"
+            type="email"
+            placeholder="Email"
+          />
+          <input
+          class="w-100" 
+          style="color: black; padding: 0.5rem; margin: 1rem 0; background: transparent; border: none; border-bottom: 1px solid black; outline: none;"
           type="password"
           placeholder="Password"
-          style="border: none; border-bottom: 1px solid black; background-color: transparent;"
         />
 
-        <div class="w-100 d-flex justify-content-between align-items-center">
-          <div class="form-check d-flex align-items-center">
-            <input type="checkbox" class="form-check-input" style="margin-right: 10px;" />
-            <label class="form-check-label" style="font-size: 0.875rem;">Remember me for 30 days</label>
+          <div class="w-100 d-flex justify-content-between align-items-center">
+            <div class="form-check d-flex align-items-center">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                style="margin-right: 10px;"
+              />
+              <label
+                class="form-check-label"
+                style="font-size: 0.875rem;"
+              >Remember me for 30 days</label>
+            </div>
+            <p
+              class="text-secondary"
+              style="font-size: 0.875rem; font-weight: 500; cursor: pointer; text-decoration: underline;"
+            >
+              Quên mật khẩu ?
+            </p>
           </div>
-          <p class="text-secondary" style="font-size: 0.875rem; font-weight: 500; cursor: pointer; text-decoration: underline;">
-            Forgot Password ?
-          </p>
-        </div>
 
-        <div class="w-100 d-flex flex-column">
-          <button
-            class="btn btn-dark my-2 font-weight-semibold"
-            style="background-color: #060606; border-radius: 0.375rem; padding: 1rem; text-align: center;"
+          <div class="w-100 d-flex flex-column">
+            <button
+              class="btn btn-dark my-2 font-weight-semibold"
+              style="background-color: #ffb0bd; border-radius: 0.375rem; padding: 1rem; text-align: center;"
+            >
+              Đăng nhập
+            </button>
+          </div>
+
+          <div
+            class="w-100 d-flex align-items-center justify-content-center position-relative py-2"
           >
-            Login
+            <div
+              class="w-100"
+              style="height: 1px; background-color: black;"
+            ></div>
+            <p
+              class="text-secondary position-absolute"
+              style="padding: 0;"
+            >or</p>
+
+          </div>
+
+          <button
+            class="my-2 font-weight-semibold d-flex align-items-center justify-content-center"
+            style="border-radius: 0.375rem; padding: 1rem; text-align: center; cursor: pointer;"
+          >
+            <img
+              src="https://img.idesign.vn/2023/02/idesign_logogg_1.jpg"
+              alt=""
+              class="h-6 mr-2"
+              style="height: 24px;"
+            />
+            Sign In With Google
           </button>
         </div>
 
-        <div class="w-100 d-flex align-items-center justify-content-center position-relative py-2">
-          <div class="w-100" style="height: 1px; background-color: black;"></div>
-          <p class="text-secondary position-absolute" style="background-color: #f5f5f5; padding: 0 10px;">or</p>
+        <div class="w-100 d-flex align-items-center justify-content-center">
+          <p class="text-secondary" style="font-size: 0.875rem;">
+            Bạn chưa có tài khoản?
+            <span
+              class="font-weight-semibold"
+              style="cursor: pointer; text-decoration: underline;"
+            >
+              <a href="/auth/register">Đăng ký miễn phí</a>
+            </span>
+          </p>
         </div>
-
-        <div
-          class="btn btn-outline-dark my-2 font-weight-semibold d-flex align-items-center justify-content-center"
-          style="border-radius: 0.375rem; padding: 1rem; text-align: center; cursor: pointer;"
-        >
-          <img src="" alt="" class="h-6 mr-2" style="height: 24px;" />
-          Sign In With Google
-        </div>
-      </div>
-
-      <div class="w-100 d-flex align-items-center justify-content-center">
-        <p class="text-secondary" style="font-size: 0.875rem;">
-          Don't have a account?
-          <span class="font-weight-semibold" style="cursor: pointer; text-decoration: underline;">
-            <a href="#">Sign up for free</a>
-          </span>
-        </p>
       </div>
     </div>
   </div>
 </div>
+
+<style>
+  @keyframes slide-right {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+</style>

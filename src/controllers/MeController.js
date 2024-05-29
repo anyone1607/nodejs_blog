@@ -13,22 +13,6 @@ class MeController {
       })
     )
     .catch(next);
-
-
-    // Product.countDocumentsDeleted({})
-    // .then((deletedCount) => {
-    //   console.log(deletedCount);
-    // })
-    // .catch(() => {});
-
-
-    // Product.find({})
-    //   .then((products) =>
-    //     res.render("me/stored-products", {
-    //       products: multipleMongooseToObject(products),
-    //     })
-    //   )
-    //   .catch(next);
   }
   //[GET] /me/trash/products
   trashProducts(req, res, next) {

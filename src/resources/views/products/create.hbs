@@ -1,8 +1,10 @@
 <form method="POST" action="/products/store">
-  <h1 style="text-align: center;margin-top:20px;font-weight: lighter; font-family:cursive;">Thêm sản phẩm</h1>
+  <h1
+    style="text-align: center;margin-top:20px;font-weight: lighter; font-family:cursive;"
+  >Thêm sản phẩm</h1>
   <div class="form-row">
     <div class="form-group col-md-6">
-      <label for="inputName">Tên sản phẩm</label>
+      <label for="inputName" style="color: #ffb0bd;">Tên sản phẩm</label>
       <input
         type="text"
         class="form-control"
@@ -12,29 +14,31 @@
       />
     </div>
     <div class="form-group col-md-6">
-      <label for="inputDescription">Mô tả sản phẩm</label>
+      <label for="inputImage" style="color: #ffb0bd;">Hình ảnh sản phẩm</label>
       <input
         type="text"
         class="form-control"
-        id="inputDescription"
-        name="description"
-        placeholder="Chi tiết ..."
+        id="inputImage"
+        name="image"
+        placeholder="Thêm hình ảnh"
       />
     </div>
   </div>
+
   <div class="form-group">
-    <label for="inputImage">Hình ảnh sản phẩm</label>
-    <input
-      type="text"
+    <label for="inputDescription" style="color: #ffb0bd;">Mô tả sản phẩm</label>
+    <textarea
       class="form-control"
-      id="inputImage"
-      name="image"
-      placeholder="Thêm hình ảnh"
-    />
+      id="inputDescription"
+      name="description"
+      placeholder="Chi tiết ..."
+      rows="4"
+    ></textarea>
   </div>
+
   <div class="form-row">
     <div class="form-group col-md-6">
-      <label for="inputPrice">Giá sản phẩm</label>
+      <label for="inputPrice" style="color: #ffb0bd;">Giá sản phẩm</label>
       <input type="text" class="form-control" id="inputPrice" name="price" />
     </div>
   </div>
@@ -51,5 +55,9 @@
       </label>
     </div>
   </div>
-  <button type="submit" class="btn btn-outline-info" style="margin-bottom: 20px;">Thêm sản phẩm</button>
+  <button
+    type="submit"
+    class="btn btn-outline-info"
+    style="margin-bottom: 20px;"
+  >Thêm sản phẩm</button>
 </form>

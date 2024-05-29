@@ -1,4 +1,8 @@
-<nav class="navbar navbar-expand-lg" style="background-color: #ffb0bd">
+<nav
+  id="navbar"
+  class="navbar navbar-expand-lg"
+  style="background-color: #ffb0bd;"
+>
   <div class="container-fluid">
     <a
       class="navbar-brand"
@@ -17,21 +21,7 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a
-            class="nav-link"
-            href="#"
-            style="color: #fff; font-weight: lighter; font-family:cursive;"
-          >Đăng nhập</a>
-        </li>
-        <li class="nav-item">
-          <a
-            class="nav-link"
-            href="#"
-            style="color: #fff; font-weight: lighter; font-family:cursive;"
-          >Đăng ký</a>
-        </li>
-        
+
         <li class="btn btn-[#ffb0bd] dropdown show">
           <a
             style="text-decoration: none; color:#fff;font-weight: lighter; font-family:cursive;"
@@ -48,13 +38,38 @@
           <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
             <a class="dropdown-item" href="/products/create">Thêm sản phẩm</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Xem đơn hàng</a>
-            <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="/me/stored/products">Chi tiết sản
               phẩm</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Xem đơn hàng</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Xem thống kê</a>
           </div>
         </li>
-    
+
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            href="/auth/login"
+            style="color: #fff; font-weight: lighter; font-family:cursive;"
+          >Đăng nhập</a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            href="/auth/register"
+            style="color: #fff; font-weight: lighter; font-family:cursive;"
+          >Đăng ký</a>
+        </li>
+        
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            href="#"
+            style="color: #fff; font-weight: lighter; font-family:cursive;"
+          >Đăng xuất</a>
+        </li>
+
         <li class="nav-item">
           <a
             class="nav-link"
@@ -76,5 +91,15 @@
       </ul>
     </div>
   </div>
-
 </nav>
+
+<script>
+  window.onscroll = function() {stickyNavbar()}; var navbar =
+  document.getElementById("navbar"); var sticky = navbar.offsetTop; function
+  stickyNavbar() { if(window.scrollY > 0) { navbar.classList.add('sticky'); }
+  else { navbar.classList.remove('sticky'); } }
+</script>
+
+<style>
+  .sticky { position: sticky; top: 0; width: 100%; z-index: 1; }
+</style>
