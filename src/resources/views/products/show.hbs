@@ -14,7 +14,7 @@
       <p style="font-family: 'Times New Roman', Times, serif; font-size: 1rem; font-weight: bold; color: black;">Màu sắc: </p>
       <p style="font-family: 'Times New Roman', Times, serif; font-size: 1rem; font-weight: bold; color: black;">Số lượng: </p>
       <p style="font-family: 'Times New Roman', Times, serif; font-size: 1rem; font-weight: bold; color: black;">Kích thước: </p>
-      <button class="btn btn-outline-info" onclick="addToCart()">Thêm vào giỏ hàng</button>
+      <button class="btn btn-outline-info">Thêm vào giỏ hàng</button>
       <button class="btn btn-outline-info">Mua ngay</button>    
       <div class="dropdown-divider"></div> 
         {{> ship}}
@@ -22,28 +22,26 @@
   </div>
 
   <div>
-    <h4 style="font-weight: lighter; font-family:cursive;">Mô tả chi tiết</h4>
+    <h4 style="font-weight: lighter; font-family:cursive; mt-4; mb-4">Chi tiết sản phẩm</h4>
+      <p style="font-family: 'Times New Roman', Times, serif; font-size: 1rem; font-weight: bold; color: black;">Xuất xứ: {{product.productDetail.origin}} </p>
+      <p style="font-family: 'Times New Roman', Times, serif; font-size: 1rem; font-weight: bold; color: black;">Chất liệu: {{product.productDetail.material}} </p>
+      <p style="font-family: 'Times New Roman', Times, serif; font-size: 1rem; font-weight: bold; color: black;">Kích thước: {{product.productDetail.size}} </p>
+      <p style="font-family: 'Times New Roman', Times, serif; font-size: 1rem; font-weight: bold; color: black;">Tên shop: {{product.productDetail.organization}} </p>
+      <p style="font-family: 'Times New Roman', Times, serif; font-size: 1rem; font-weight: bold; color: black;">Gửi từ: {{product.productDetail.from}} </p>
   </div>
 
+  <div class="col-8">
+    <h4 style="font-weight: lighter; font-family:cursive;">Mô tả sản phẩm</h4>
+    <p id="productDescription">{{product.productDetail.productDescription}}</p>
+  </div>
 </div>
 
 <script>
-  var quantity = 1;
+  document.addEventListener("DOMContentLoaded", function() {
+  var productDescription = document.getElementById("productDescription");
+  var productText = productDescription.textContent;
+  var newText = productText.replace(/ - | \+ /g, "<br><br>$&");
+  productDescription.innerHTML = newText;
+});
 
-  function increaseQuantity() {
-    quantity++;
-    document.getElementById('quantityInput').value = quantity;
-  }
-
-  function decreaseQuantity() {
-    if (quantity > 1) {
-      quantity--;
-      document.getElementById('quantityInput').value = quantity;
-    }
-  }
-
-  function addToCart() {
-    var selectedQuantity = document.getElementById('quantityInput').value;
-    // Thêm logic ở đây để thực hiện thêm sản phẩm vào giỏ hàng
-  }
 </script>

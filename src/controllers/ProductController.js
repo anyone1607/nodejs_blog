@@ -52,7 +52,7 @@ class ProductController {
       .then(() => res.redirect("back"))
       .catch(next);
   }
-  
+
   //[DELETE]/products/:id/force
   forceDelete(req, res, next) {
     Product.deleteOne({ _id: req.params.id })
@@ -65,7 +65,19 @@ class ProductController {
     Product.restore({ _id: req.params.id })
       .then(() => res.redirect("back"))
       .catch(next);
-  }  
+  }
+  //[POST] /products/handle-form-actions
+  handleFormActions(req, res, next) {
+    switch(req.body.action){
+      case 'delete' :
+        Product.delete({ _id: { $in: req.body.productIds} })
+        .then(() => res.redirect("back"))
+        .catch(next);
+      break;
+      default: 
+      res.json({message: 'Action invalid'})
+    }
+  }
 }
 
 module.exports = new ProductController();

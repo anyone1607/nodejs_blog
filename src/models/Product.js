@@ -6,12 +6,22 @@ const mongooseDelete = require("mongoose-delete");
 
 const Schema = mongoose.Schema;
 
+const ProductDetail = new Schema({
+    origin: {type: String},
+    material: {type: String},
+    size: {type: String},
+    organization: {type: String},
+    productDescription: {type: String},
+    from: {type: String},
+}, { _id: false });
+
 const Product = new Schema(
   {
     name: { type: String, required: true },
     description: { type: String },
     image: { type: String },
     price: { type: String, required: true },
+    productDetail: ProductDetail,
     slug: { type: String, slug: "name", unique: true },
   },
   {

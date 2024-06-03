@@ -113,11 +113,11 @@
 
   // Restore product button click events
   restoreBtn.click(function (e) {
-    e.preventDefault();
-    var productId = $(this).data('id');
-    restoreForm.action = "/products/" + productId + "/restore?_method=PATCH";
-    restoreForm.submit();
-  })
+      e.preventDefault();
+      var productId = $(this).data('id');
+      restoreForm.action = "/products/" + productId + "/restore?_method=PATCH";
+      restoreForm.submit();
+    })
 });
 
 

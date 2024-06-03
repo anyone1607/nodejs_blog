@@ -19,73 +19,82 @@
       style="background-color: #f5f5f5; padding: 5rem;"
     >
       <div class="w-100 d-flex flex-column" style="max-width: 500px;">
-        <div class="w-100 d-flex flex-column">
-          <input
-            class="w-100"
-            style="color: black; padding: 0.5rem; margin: 1rem 0; background: transparent; border: none; border-bottom: 1px solid black; outline: none;"
-            type="text"
-            placeholder="Username"
-          />
-          <input
-            class="w-100"
-            style="color: black; padding: 0.5rem; margin: 1rem 0; background: transparent; border: none; border-bottom: 1px solid black; outline: none;"
-            type="email"
-            placeholder="Email"
-          />
-          <input
-            class="w-100"
-            style="color: black; padding: 0.5rem; margin: 1rem 0; background: transparent; border: none; border-bottom: 1px solid black; outline: none;"
-            type="password"
-            placeholder="Password"
-          />
+        <form method="POST" action="/auth/register">
+          <div class="w-100 d-flex flex-column">
+            <input
+              class="w-100"
+              style="color: black; padding: 0.5rem; margin: 1rem 0; background: transparent; border: none; border-bottom: 1px solid black; outline: none;"
+              type="text"
+              placeholder="Username"
+              name="username"
+            />
+            <input
+              class="w-100"
+              style="color: black; padding: 0.5rem; margin: 1rem 0; background: transparent; border: none; border-bottom: 1px solid black; outline: none;"
+              type="email"
+              placeholder="Email"
+              name="email"
+            />
+            <input
+              class="w-100"
+              style="color: black; padding: 0.5rem; margin: 1rem 0; background: transparent; border: none; border-bottom: 1px solid black; outline: none;"
+              type="password"
+              placeholder="Password"
+              name="password"
+            />
 
-          <div class="w-100 d-flex align-items-center justify-content-between">
-            <div class="w-100 d-flex align-items-center">
-              <input
-                type="checkbox"
-                class="mr-2"
-                style="width: 1rem; height: 1rem;"
+            <div
+              class="w-100 d-flex align-items-center justify-content-between"
+            >
+              <div class="w-100 d-flex align-items-center">
+                <input
+                  type="checkbox"
+                  class="mr-2"
+                  style="width: 1rem; height: 1rem;"
+                />
+                <p style="font-size: 0.875rem; margin: 0;">Remember me for 30
+                  days</p>
+              </div>
+            </div>
+
+            <div class="w-100 d-flex flex-column">
+              <a href="#" style="text-decoration: none;">
+                <button
+                  class="w-100 my-2 font-weight-bold"
+                  style="color: white; background-color: #ffb0bd; border-radius: 0.375rem; padding: 1rem; text-align: center; display: flex; align-items: center; justify-content: center; cursor: pointer;"
+                >
+                  Đăng ký
+                </button>
+              </a>
+            </div>
+
+            <div
+              class="w-100 d-flex align-items-center justify-content-center position-relative py-2"
+            >
+              <div
+                class="w-100"
+                style="height: 1px; background-color: black;"
+              ></div>
+              <p
+                class="text-secondary position-absolute"
+                style="padding: 0;"
+              >or</p>
+            </div>
+
+            <div
+              class="w-100 my-2 font-weight-bold"
+              style="color: #060606; background-color: white; border: 1px solid rgba(0, 0, 0, 0.4); border-radius: 0.375rem; padding: 1rem; text-align: center; display: flex; align-items: center; justify-content: center; cursor: pointer;"
+            >
+              <img
+                src="https://img.idesign.vn/2023/02/idesign_logogg_1.jpg"
+                alt=""
+                style="height: 1.5rem; margin-right: 0.5rem;"
               />
-              <p style="font-size: 0.875rem; margin: 0;">Remember me for 30 days</p>
+              Sign Up With Google
             </div>
           </div>
+        </form>
 
-          <div class="w-100 d-flex flex-column">
-            <a href="#" style="text-decoration: none;">
-              <button
-                class="w-100 my-2 font-weight-bold"
-                style="color: white; background-color: #ffb0bd; border-radius: 0.375rem; padding: 1rem; text-align: center; display: flex; align-items: center; justify-content: center; cursor: pointer;"
-              >
-                Đăng ký
-              </button>
-            </a>
-          </div>
-
-          <div
-            class="w-100 d-flex align-items-center justify-content-center position-relative py-2"
-          >
-            <div
-              class="w-100"
-              style="height: 1px; background-color: black;"
-            ></div>
-            <p
-              class="text-secondary position-absolute"
-              style="padding: 0;"
-            >or</p>
-          </div>
-
-          <div
-            class="w-100 my-2 font-weight-bold"
-            style="color: #060606; background-color: white; border: 1px solid rgba(0, 0, 0, 0.4); border-radius: 0.375rem; padding: 1rem; text-align: center; display: flex; align-items: center; justify-content: center; cursor: pointer;"
-          >
-            <img
-              src="https://img.idesign.vn/2023/02/idesign_logogg_1.jpg"
-              alt=""
-              style="height: 1.5rem; margin-right: 0.5rem;"
-            />
-            Sign Up With Google
-          </div>
-        </div>
       </div>
 
       <div class="w-100 d-flex align-items-center justify-content-center">
