@@ -1,35 +1,130 @@
 <div class="mt-4 mb-4">
-  <h4>Admin Dashboard</h4>
+  <h2>Thống kê</h2>
   {{!-- Thống kê : số người , doanh thu.... --}}
+  <div class="row">
+        <div class="col-3 products">
+        <i class="fas fa-box icon"></i>
+          <div>
+            Sản phẩm
+          </div>
+            
+        </div>
+        <div class="col-3 users">
+          <i class="fas fa-users icon"></i>
+            <div>
+              Người dùng
+            </div>
+        </div>
+        <div class="col-3 revenue">
+          <i class="fas fa-dollar-sign icon"></i>
+          <div>
+            Doanh thu
+          </div>
+            
+        </div>
+        <div class="col-3 orders">
+          <i class="fas fa-shopping-cart icon"></i>
+            <div>
+              Đơn hàng
+            </div>
+        </div>
+  </div>
+
   <table class="table">
-    <thead class="thead-dark">
+    <thead style="text-align: center;">
       <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
+        <th scope="col">ID</th>
+        <th scope="col">Username</th>
+        <th scope="col">Avatar</th>
+        <th scope="col">Email</th>
+        <th scope="col">Role</th>
+        <th scope="col">CreatedAt</th>
+        <th scope="col">UpdatedAt</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody style="text-align: center;">
+      {{#each users}}
       <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
+        <th scope="row">{{sum @index 1}}</th>
+        <th>{{this.username}}</th>
+        <th></th>
+        <th>{{this.email}}</th>
+        <td>{{roleName this.role}}</td>
+        <th>{{this.createdAt}}</th>
+        <th>{{this.updatedAt}}</th>
       </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td>@twitter</td>
-      </tr>
+      {{/each}}
     </tbody>
   </table>
   {{!-- biểu đồ số lượng người truy cập theo ngày , tháng , ... --}}
+  <div id="myPlot" style="width:100%;max-width:700px; height:400px;"></div>
 </div>
+
+
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+      const xArray = [50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150];
+      const yArray = [7, 8, 8, 9, 9, 9, 10, 11, 14, 14, 15];
+
+      const data = [{
+          x: xArray,
+          y: yArray,
+          mode: "lines"
+      }];
+
+      const layout = {
+          xaxis: {range: [40, 160], title: "The number of accesses"},
+          yaxis: {range: [5, 16], title: "Date"},
+          title: "Statistics on website traffic"
+      };
+
+      Plotly.newPlot("myPlot", data, layout);
+  });
+</script>
+
+<style>
+        .row {
+            display: flex;
+            justify-content: space-between;
+        }
+        .col-3 {
+            flex: 1;
+            padding: 60px;
+            margin: 30px;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            text-align: center;
+            color: #fff; 
+        }
+        .col-3:first-child {
+            margin-left: 0;
+        }
+        .col-3:last-child {
+            margin-right: 0;
+        }
+        .col-3.products {
+            background-color: #007bff;
+        }
+        .col-3.users {
+            background-color: #28a745;
+        }
+        .col-3.revenue {
+            background-color: #ffc107;
+            color: #000;
+        }
+        .col-3.orders {
+            background-color: #dc3545;
+        }
+        .icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        h2 {
+          text-align: center;
+          font-weight: lighter;
+          font-family: cursive;
+        }
+</style>

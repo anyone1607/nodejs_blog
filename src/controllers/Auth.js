@@ -2,6 +2,8 @@ const User = require("../models/User");
 const bcrypt = require("bcrypt");
 const crypto = require("crypto");
 const nodemailer = require("nodemailer");
+const jwt = require("jsonwebtoken");
+const JWT_SECRET = '';
 
 class AuthController {
   // [GET] /auth/login
@@ -11,6 +13,10 @@ class AuthController {
   // [GET] /auth/register
   registerPage(req, res, next) {
     res.render("auth/register");
+  }
+  //[GET] /auth/forgot
+  forgotPage(req, res, next){
+    res.render("auth/forgotpassword");
   }
   // [POST] /auth/login
   async login(req, res, next) {
@@ -30,7 +36,6 @@ class AuthController {
       if (!isMatch) {
         return res.status(401).json("Invalid password");
       }
-
       return res.redirect("/");
     } catch (err) {
       console.log(err);
@@ -69,7 +74,7 @@ class AuthController {
     }
   }
 
-  // [PUT]/auth/:id/forgotpassword
+  // [POST]/auth/forgotpassword
   async forgotPassword(req, res, next) {
     try {
       const { email } = req.body;
