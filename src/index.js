@@ -4,8 +4,8 @@ const morgan = require("morgan");
 const handlebars = require("express-handlebars");
 const methodOverride = require("method-override");
 const app = express();
-const port = 9999;
-
+// const port = 9999;
+require("dotenv").config();
 
 const route = require("./routes");
 const db = require("./config/db");
@@ -52,8 +52,13 @@ app.use(methodOverride("_method"));
 
 route(app);
 
-app.listen(port, () => {
-  console.log(`App listening on port ${port}`);
-});
+// app.listen(port, () => {
+//   console.log(`App listening on port ${port}`);
+// });
+
+app.listen(process.env.PORT, process.env.HOST_NAME, () => {
+  console.log(`Server is running at: http://${process.env.HOST_NAME}:${process.env.PORT}`);
+  db.connect();
+})
 
 
