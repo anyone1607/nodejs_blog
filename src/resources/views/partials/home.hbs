@@ -1,14 +1,13 @@
 {{> site }}
 <div class="mt-4 mb-4">
-  {{!-- <h4 style="font-weight: lighter; font-family:cursive;">Sản phẩm</h4> --}}
   <div class="row" style="display: flex; flex-wrap: wrap">
-    {{#each products}}
-      <div class="col-sm-6 col-lg-4" style="display: flex; flex-wrap: wrap">
-        <div
+    {{#each cproducts}}
+    <div class="col-sm-6 col-lg-4" style="display: flex; flex-wrap: wrap">
+      <div
           class="card"
           style="display: flex; flex-direction: column; flex: 1; margin-bottom: 20px;"
         >
-          <a href="/products/{{this.slug}}">
+          <a href="/{{this.slug}}">
             <img
               style="height: 350px; object-fit: cover; width: 100%; "
               src="{{this.image}}"
@@ -20,19 +19,20 @@
             class="card-body"
             style="display: flex; flex-direction: column; flex: 1;"
           >
-            <a href="/products/{{this.slug}}" style="text-decoration: none;">
+            <a href="/{{this.slug}}" style="text-decoration: none;">
               <h5 class="card-title" style="color: #ffb0bd">{{this.name}}</h5>
             </a>
-            <p class="card-text" style="flex: 1;">{{this.description}}</p>
             <p
               class="card-text"
               style="flex: 1; font-family: 'Times New Roman', Times, serif; font-size: 1.5rem; font-weight: bold; color: black;"
             >{{this.price}}</p>
-            {{!-- <a href="#" class="btn btn-outline-info">Thêm vào giỏ hàng</a> --}}
-            <a href="/products/{{this.slug}}" class="btn btn-outline-info">Chi tiết sản phẩm</a>
+            <ul class="list-group list-group-flush">
+             <li class="list-group-item">{{this.combo}}</li>
+            </ul>
+            <a href="/{{this.slug}}" class="btn btn-outline-info">Chi tiết sản phẩm</a>
           </div>
         </div>
-      </div>
-    {{/each}}
+    </div>
+ {{/each}}
   </div>
 </div>

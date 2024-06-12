@@ -15,12 +15,6 @@ const ProductDetail = new Schema({
     from: {type: String},
 }, { _id: false });
 
-const Thumbnail = new Schema({
-    images: [{
-      imageUrl: {type: String}
-    }]
-}, {_id: false});
-
 const Product = new Schema(
   {
     name: { type: String, required: true },
@@ -28,7 +22,6 @@ const Product = new Schema(
     image: { type: String },
     price: { type: String, required: true },
     productDetail: ProductDetail,
-    thumbnail: Thumbnail,
     slug: { type: String, slug: "name", unique: true },
   },
   {

@@ -2,24 +2,23 @@
 <div class="mt-4">
   <div class="row">
     <div class="col-5">
-        <img src="{{product.image}}" alt="{{product.name}}" style="width: 100%;"/>
+        <img src="{{product.image}}" alt="{{product.name}}" style="width: 100%;border-radius: 4%;"/>
     </div>
 
     <div class="col-7">      
       <h1 style="font-family: 'Times New Roman', Times, serif;font-weight: bold; color: #ffb0bd;">{{product.name}}</h1>
       <p style="font-family: 'Times New Roman', Times, serif; font-size: 1.5rem; font-weight: bold; color: black;">{{product.description}}</p>
       <p style="font-family: 'Times New Roman', Times, serif; font-size: 1.5rem; font-weight: bold; color: black;color: #ffb0bd;">{{product.price}}</p>
-      <p style="font-family: 'Times New Roman', Times, serif; font-size: 1rem; font-weight: bold; color: black;">Màu sắc: </p>
-      <p style="font-family: 'Times New Roman', Times, serif; font-size: 1rem; font-weight: bold; color: black;">Số lượng: </p>
-      <p style="font-family: 'Times New Roman', Times, serif; font-size: 1rem; font-weight: bold; color: black;">Kích thước: </p>
-      <button class="btn btn-outline-info">Thêm vào giỏ hàng</button>
-      <button class="btn btn-outline-info">Mua ngay</button>    
+      <p style="font-family: 'Times New Roman', Times, serif; font-size: 1rem; font-weight: bold; color: black;">Màu sắc: {{product.productDetail.color}}</p>
+      <p style="font-family: 'Times New Roman', Times, serif; font-size: 1rem; font-weight: bold; color: black;">Kích thước: {{product.productDetail.size}}</p>
+      {{!-- <button class="btn btn-outline-info">Thêm vào giỏ hàng</button>
+      <button class="btn btn-outline-info">Mua ngay</button>     --}}
       <div class="dropdown-divider"></div> 
         {{> ship}}
     </div>
   </div>
 
-  <div>
+  <div class="mt-4">
     <h4 style="font-weight: lighter; font-family:cursive; mt-4; mb-4">Chi tiết sản phẩm</h4>
       <p style="font-family: 'Times New Roman', Times, serif; font-size: 1rem; font-weight: bold; color: black;">Xuất xứ: {{product.productDetail.origin}} </p>
       <p style="font-family: 'Times New Roman', Times, serif; font-size: 1rem; font-weight: bold; color: black;">Chất liệu: {{product.productDetail.material}} </p>
@@ -29,12 +28,14 @@
   </div>
 
   <div class="row">
-    <div class="col-6">
+    <div class="col-8">
     <h4 style="font-weight: lighter; font-family:cursive;">Mô tả sản phẩm</h4>
     <p id="productDescription">{{product.productDetail.productDescription}}</p>
   </div>
-  <div class="col-6">
-    
+  <div class="col-4">
+    <img src="{{product.productDetail.image1}}" style="width: 100%;height: auto;margin-bottom: 5px;border-radius: 5%;">
+    <img src="{{product.productDetail.image2}}" style="width: 100%;height: auto;margin-bottom: 5px;border-radius: 5%;">
+    <img src="{{product.productDetail.image3}}" style="width: 100%;height: auto;margin-bottom: 5px;border-radius: 5%;">
   </div>
   </div>
 </div>
@@ -48,4 +49,3 @@
 });
 
 </script>
-
